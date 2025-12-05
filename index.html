@@ -5,57 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youra Dallakyan</title>
 
-    <!-- Police futuriste -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <!-- Polices spéciales -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet"> <!-- Titre -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet"> <!-- Description et signature -->
 
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000000; /* fond noir */
+            margin: 0;
+            padding: 20px;
+            font-family: 'Roboto Slab', serif;
+            background-color: #000000;
             color: white;
-            text-align: center;
-            padding: 40px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* Texte du titre très grand */
-        h1 {
+        /* Titre en haut à gauche */
+        header {
             font-family: 'Orbitron', sans-serif;
-            font-size: 100px;   /* taille augmentée */
+            font-size: 36px;  /* taille moyenne */
             font-weight: 700;
-            letter-spacing: 4px;
-            margin-bottom: 50px;
+            text-align: left;
         }
 
-        /* Image plus petite */
-        img {
-            width: 50%;       /* réduit l'image */
-            max-width: 400px; /* limite maximale */
+        /* Section centrale pour image + description */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            gap: 40px; /* espace entre image et description */
+        }
+
+        /* Description à gauche de l'image */
+        .description {
+            max-width: 300px;
+            font-size: 20px; /* taille moyenne */
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        /* Image centrée */
+        .image-container img {
+            max-width: 400px;
+            width: 100%;
             border-radius: 10px;
-            margin-top: 20px;
         }
 
-        /* Paragraphe normal */
-        p {
-            margin-top: 40px;
-            font-size: 28px;   /* texte un peu plus grand */
-            color: #e0e0e0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        /* Signature en bas à droite */
+        footer {
+            font-size: 20px; /* taille moyenne */
+            text-align: right;
+            font-family: 'Roboto Slab', serif;
         }
     </style>
 </head>
-
 <body>
 
-    <h1>Youra Dallakyan</h1>
+    <!-- Titre -->
+    <header>Youra Dallakyan</header>
 
-    <!-- Image -->
-    <img src="https://i.postimg.cc/K4RqpxSV/Snapchat-58564781(1).jpg" alt="Image de Yacine">
+    <!-- Image et description -->
+    <main>
+        <div class="description">
+            Attention, cette personne est tres gay, elle cherche mais demande pardon apres, si vous la voyez, fuiyez
+        </div>
+        <div class="image-container">
+            <img src="https://i.postimg.cc/RWrr9qQR/Snapchat-2005614137.jpg" alt="Image de Youra">
+        </div>
+    </main>
 
-    <p>
-       Excusez le
-    </p>
+    <!-- Signature -->
+    <footer>Excusez le hannnnn</footer>
 
 </body>
 </html>
