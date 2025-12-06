@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youra Dallakyan</title>
-
+    
+    <!-- Titre visible sur Google -->
+    <title>Youra Dallakyan - Site officiel</title>
+    
+    <!-- Description SEO pour Google -->
+    <meta name="description" content="Site officiel de Youra Dallakyan - Retrouvez ses coordonnées TikTok, Instagram et Snapchat, ainsi que ses images et créations.">
+    
     <!-- Polices -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
@@ -18,26 +23,27 @@
             color: white;
         }
 
-        /* Titre */
+        /* Titre principal */
         header {
             font-family: 'Orbitron', sans-serif;
-            font-size: 40px;
+            font-size: 50px;
+            font-weight: 700;
             margin: 20px 0 0 30px;
         }
 
-        /* Organisation */
+        /* Conteneur principal */
         .container {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 60px;
             padding: 20px;
             height: calc(100vh - 100px);
         }
 
-        /* COORDONNÉES AVEC FORT DÉGRADÉ */
+        /* Coordonnées avec couleur dégradée */
         .description {
             max-width: 420px;
-            font-size: 30px;
+            font-size: 28px;
             line-height: 1.5;
             text-align: left;
         }
@@ -49,7 +55,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* IMAGES PLUS GRANDES */
+        /* Conteneur images */
         .images {
             display: flex;
             flex-direction: row;
@@ -57,12 +63,10 @@
         }
 
         .images img {
-            max-width: 380px;          /* PLUS GRAND ICI */
+            max-width: 400px;
             width: 100%;
             height: auto;
             border-radius: 12px;
-
-            /* Bordure lumineuse pour être sûr que tu vois le changement */
             border: 3px solid #7f00ff;
             box-shadow: 0 0 15px #7f00ff;
         }
@@ -73,37 +77,51 @@
             bottom: 40px;
             right: 40px;
             font-size: 24px;
+            font-family: 'Roboto Slab', serif;
             color: #e0e0e0;
+        }
+
+        /* Responsive pour petits écrans */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .description {
+                text-align: center;
+            }
+            .images {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Titre principal -->
     <header>Youra Dallakyan</header>
 
+    <!-- Conteneur principal -->
     <div class="container">
 
         <!-- Coordonnées -->
         <div class="description">
             Voici mes coordonnées : <br><br>
-            <span>TikTok :</span> ydlkn59 <br>
+            <span>TikTok :</span> y.dlkn59 <br>
             <span>Instagram :</span> yura_dlkn <br>
             <span>Snapchat :</span> yura.arm
         </div>
 
         <!-- Deux images -->
         <div class="images">
-
-            <!-- Image 1 -->
-            <img src="https://i.postimg.cc/F1vc7QNZ/Screenshot-20241129-155645-Tik-Tok.jpg">
-
-            <!-- Image 2 -->
-            <img src="https://th.bing.com/th/id/OIP.AiTEMTpFgkaeskFE7kLApQHaHz?w=172&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Deuxième image">
-
+            <img src="https://i.postimg.cc/F1vc7QNZ/Screenshot-20241129-155645-Tik-Tok.jpg" alt="Image principale de Youra">
+            <img src="https://th.bing.com/th/id/OIP.AiTEMTpFgkaeskFE7kLApQHaHz?w=172&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Deuxième image de Youra">
         </div>
 
     </div>
 
+    <!-- Signature en bas à droite -->
     <div class="signature">Excusez le</div>
 
 </body>
