@@ -37,16 +37,16 @@ header {
     margin: 20px 0 0 30px;
     color: #00ffff;
     text-shadow:
-        0 0 5px #00ffff,
         0 0 10px #00ffff,
         0 0 20px #00ffff,
-        0 0 40px #00ffff;
+        0 0 40px #00ffff,
+        0 0 80px #00ffff;
     animation: neonGlow 1.5s infinite alternate;
 }
 
 @keyframes neonGlow {
-    from { text-shadow: 0 0 5px #00ffff,0 0 10px #00ffff,0 0 20px #00ffff,0 0 40px #00ffff; }
-    to { text-shadow: 0 0 10px #ff00ff,0 0 20px #ff00ff,0 0 30px #ff00ff,0 0 50px #ff00ff; }
+    from { text-shadow: 0 0 10px #00ffff,0 0 20px #00ffff,0 0 40px #00ffff; }
+    to { text-shadow: 0 0 20px #ff00ff,0 0 40px #ff00ff,0 0 80px #ff00ff; }
 }
 
 /* Container */
@@ -58,54 +58,102 @@ header {
     height: calc(100vh - 100px);
 }
 
-/* Coordonnées */
+/* Section icônes */
 .description {
     max-width: 400px;
-    font-size: 28px;
+    font-size: 26px;
     line-height: 1.5;
 }
 
-.description a {
+/* Icônes modernes */
+.socialIcon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
-    text-decoration: none;
-    margin: 10px;
-    border-radius: 12px;
-    transition: 0.3s;
+    width: 75px;
+    height: 75px;
+    margin: 15px;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Logos */
-.description img {
-    width: 40px;
-    height: 40px;
+/* Logo */
+.socialIcon img {
+    width: 45px;
+    height: 45px;
+    z-index: 3;
 }
 
-/* 🔥 Halos personnalisés */
-.tiktok {
-    box-shadow: 0 0 8px #00f0ff, 0 0 15px #ff004f;
-}
-.tiktok:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 12px #00f0ff, 0 0 25px #ff004f, 0 0 35px #ff004f;
-}
-
-.instagram {
-    box-shadow: 0 0 8px #ff006a, 0 0 15px #ff4f91;
-}
-.instagram:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 12px #ff006a, 0 0 25px #ff4f91, 0 0 35px #ff006a;
+/* Effet néon animé */
+.socialIcon::before {
+    content: "";
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    border-radius: 30%;
+    z-index: 1;
+    filter: blur(25px);
+    opacity: 0.8;
+    animation: haloMove 4s infinite linear;
 }
 
-.snapchat {
-    box-shadow: 0 0 8px #ffe600, 0 0 15px #ffff66;
+@keyframes haloMove {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
 }
-.snapchat:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 12px #ffe600, 0 0 25px #ffff66, 0 0 35px #fff200;
+
+/* TikTok halo dégradé animé */
+.tiktok::before {
+    background: conic-gradient(
+        #00f0ff,
+        #ff004f,
+        #00f0ff
+    );
+}
+
+/* Instagram dégradé rose-orange-violet */
+.instagram::before {
+    background: conic-gradient(
+        #ff006a,
+        #ff8b2f,
+        #ff4f91,
+        #ff006a
+    );
+}
+
+/* Snapchat jaune brillant */
+.snapchat::before {
+    background: conic-gradient(
+        #fff700,
+        #ffd900,
+        #fff36e,
+        #fff700
+    );
+}
+
+/* Effets hover : rotation + zoom + néon fort */
+.socialIcon:hover {
+    transform: scale(1.25) rotate(10deg);
+    box-shadow: 0 0 25px #fff, 0 0 50px #fff;
+}
+
+/* Petite vibration subtile */
+.socialIcon:hover img {
+    animation: vibro 0.15s infinite linear;
+}
+
+@keyframes vibro {
+    0% { transform: translate(0px, 0px) }
+    25% { transform: translate(1px, -1px) }
+    50% { transform: translate(-1px, 1px) }
+    75% { transform: translate(1px, 1px) }
+    100% { transform: translate(0px, 0px) }
 }
 
 /* Image principale */
@@ -114,7 +162,7 @@ header {
     height: auto;
     border-radius: 12px;
     border: 2px solid #7f00ff;
-    box-shadow: 0 0 15px #7f00ff;
+    box-shadow: 0 0 20px #7f00ff;
 }
 
 /* Signature */
@@ -142,21 +190,22 @@ header {
 <header>Youra Dallakyan</header>
 
 <div class="container">
+
     <div class="description">
         Voici mes coordonnées : <br><br>
 
-        <!-- Icônes avec halos -->
-        <a href="https://www.tiktok.com/@ydlkn59" target="_blank" class="tiktok" title="TikTok : ydlkn59">
+        <a href="https://www.tiktok.com/@ydlkn59" target="_blank" class="socialIcon tiktok" title="TikTok : ydlkn59">
             <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg">
         </a>
 
-        <a href="https://instagram.com/yura_dlkn" target="_blank" class="instagram" title="Instagram : yura_dlkn">
+        <a href="https://instagram.com/yura_dlkn" target="_blank" class="socialIcon instagram" title="Instagram : yura_dlkn">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
         </a>
 
-        <a href="https://www.snapchat.com/add/yura.arm" target="_blank" class="snapchat" title="Snapchat : yura.arm">
+        <a href="https://www.snapchat.com/add/yura.arm" target="_blank" class="socialIcon snapchat" title="Snapchat : yura.arm">
             <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg">
         </a>
+
     </div>
 
     <div class="images">
@@ -174,8 +223,8 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const particles = [];
-for(let i=0;i<100;i++){
-    particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,radius:Math.random()*2+1,dx:(Math.random()-0.5)*0.5,dy:(Math.random()-0.5)*0.5});
+for(let i=0;i<120;i++){
+    particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,radius:Math.random()*2+1,dx:(Math.random()-0.5)*0.4,dy:(Math.random()-0.5)*0.4});
 }
 function animate(){
     ctx.fillStyle="#000";
