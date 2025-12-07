@@ -58,7 +58,7 @@ header {
     height: calc(100vh - 100px);
 }
 
-/* Coordonnées avec boutons animés */
+/* Coordonnées avec boutons blancs */
 .description {
     max-width: 400px;
     font-size: 28px;
@@ -76,12 +76,11 @@ header {
     border-radius: 8px;
     transition: 0.3s;
     box-shadow: 0 0 5px #ffffff;
-    animation: buttonGlow 2s infinite alternate;
 }
 
 .description a:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+    box-shadow: 0 0 15px #ffffff, 0 0 25px #ffffff;
 }
 
 .description img {
@@ -90,26 +89,14 @@ header {
     margin-right: 10px;
 }
 
-@keyframes buttonGlow {
-    0% { box-shadow: 0 0 5px #ff00ff; }
-    50% { box-shadow: 0 0 15px #00ffff; }
-    100% { box-shadow: 0 0 10px #ff00ff; }
-}
-
-/* Images ajustées */
-.images {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
+/* Image principale */
 .images img {
-    max-width: 350px;
+    max-width: 500px; /* un peu plus grande */
     height: auto;
     border-radius: 12px;
     border: 2px solid #7f00ff;
     box-shadow: 0 0 15px #7f00ff;
-    object-fit: contain; /* conserve les proportions */
+    object-fit: contain;
 }
 
 /* Signature */
@@ -128,7 +115,7 @@ header {
         align-items: center;
     }
     .description { text-align: center; }
-    .images { flex-direction: column; gap: 15px; }
+    .images { margin-top: 20px; }
 }
 </style>
 </head>
@@ -152,16 +139,10 @@ header {
 
     <div class="images">
         <img src="https://i.postimg.cc/F1vc7QNZ/Screenshot-20241129-155645-Tik-Tok.jpg" alt="Image principale">
-        <img src="https://i.postimg.cc/L5LpG9zP/snapchat-correct.jpg" alt="Image Snapchat">
     </div>
 </div>
 
 <div class="signature">Excusez-le</div>
-
-<!-- Musique de fond -->
-<audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
 
 <!-- Canvas galaxie -->
 <canvas id="bgCanvas"></canvas>
