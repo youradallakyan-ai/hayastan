@@ -5,244 +5,163 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Youra Dallakyan</title>
 
-<!-- Polices -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 
 <style>
+/* ----------- GLOBAL ----------- */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto Slab', serif;
-    color: white;
     background: #000;
-    overflow-x: hidden;
+    color: white;
+    text-align: center;
+    font-family: "Roboto Slab", serif;
 }
 
-/* Fond galaxie */
-canvas#bgCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+/* ----------- TITRE ----------- */
+h1 {
+    margin-top: 60px;
+    font-size: 55px;
+    font-family: "Orbitron", sans-serif;
+    color: #00eaff;
+    text-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
 }
 
-/* Titre */
-header {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 50px;
-    font-weight: 700;
-    margin: 20px 0 0 30px;
-    color: #00ffff;
-    text-shadow:
-        0 0 10px #00ffff,
-        0 0 20px #00ffff,
-        0 0 40px #00ffff,
-        0 0 80px #00ffff;
-    animation: neonGlow 1.5s infinite alternate;
-}
-
-@keyframes neonGlow {
-    from { text-shadow: 0 0 10px #00ffff,0 0 20px #00ffff,0 0 40px #00ffff; }
-    to { text-shadow: 0 0 20px #ff00ff,0 0 40px #ff00ff,0 0 80px #ff00ff; }
-}
-
-/* Container */
-.container {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    padding: 20px;
-    height: calc(100vh - 100px);
-}
-
-/* Section icônes */
-.description {
-    max-width: 400px;
-    font-size: 26px;
-    line-height: 1.5;
-}
-
-/* Icônes modernes */
+/* ----------- ICONES RÉSEAUX ----------- */
 .socialIcon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 75px;
-    height: 75px;
-    margin: 15px;
-    border-radius: 20px;
-    transition: 0.4s ease;
-    cursor: pointer;
-    position: relative;
+    display: inline-block;
+    width: 95px;
+    height: 95px;
+    margin: 18px;
+    border-radius: 50%;
     overflow: hidden;
+    transition: 0.35s;
+    position: relative;
+}
+
+/* Halo animé multicolore */
+.socialIcon::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    filter: blur(18px);
+    animation: neonHalo 3s linear infinite;
+}
+
+@keyframes neonHalo {
+    0% { box-shadow: 0 0 20px #ff004c; }
+    25% { box-shadow: 0 0 20px #ffae00; }
+    50% { box-shadow: 0 0 20px #00eaff; }
+    75% { box-shadow: 0 0 20px #ae00ff; }
+    100% { box-shadow: 0 0 20px #ff004c; }
+}
+
+.socialIcon:hover {
+    transform: rotate(15deg) scale(1.15);
+    filter: brightness(1.3);
 }
 
 /* Logo */
 .socialIcon img {
-    width: 45px;
-    height: 45px;
-    z-index: 3;
+    width: 100%;
+    height: 100%;
 }
 
-/* Effet néon animé */
-.socialIcon::before {
+/* ----------- ÉPINGLÉ 3D ----------- */
+.pin-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 32px;
+    font-family: "Orbitron", sans-serif;
+    color: white;
+    gap: 15px;
+    position: relative;
+}
+
+/* Halo multicolore autour de l'épingle */
+.pin-block::after {
     content: "";
     position: absolute;
-    width: 140%;
-    height: 140%;
-    top: -20%;
-    left: -20%;
-    border-radius: 30%;
-    z-index: 1;
-    filter: blur(25px);
-    opacity: 0.8;
-    animation: haloMove 4s infinite linear;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    z-index: -1;
+    animation: pinHalo 4s infinite linear;
 }
 
-@keyframes haloMove {
-    0% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.2); }
-    100% { transform: rotate(360deg) scale(1); }
+@keyframes pinHalo {
+    0% { box-shadow: 0 0 20px #ff0000; }
+    25% { box-shadow: 0 0 25px #ff8c00; }
+    50% { box-shadow: 0 0 25px #00eaff; }
+    75% { box-shadow: 0 0 25px #ae00ff; }
+    100% { box-shadow: 0 0 20px #ff0000; }
 }
 
-/* TikTok halo dégradé animé */
-.tiktok::before {
-    background: conic-gradient(
-        #00f0ff,
-        #ff004f,
-        #00f0ff
-    );
+/* L'icône 3D */
+.pin-icon {
+    width: 70px;
+    filter: drop-shadow(0 0 10px #ff0000);
 }
 
-/* Instagram dégradé rose-orange-violet */
-.instagram::before {
-    background: conic-gradient(
-        #ff006a,
-        #ff8b2f,
-        #ff4f91,
-        #ff006a
-    );
+/* ----------- TEXTE LOCALISATION ----------- */
+.pin-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-/* Snapchat jaune brillant */
-.snapchat::before {
-    background: conic-gradient(
-        #fff700,
-        #ffd900,
-        #fff36e,
-        #fff700
-    );
+.pin-dept {
+    font-size: 34px;
+    color: #00eaff;
+    text-shadow: 0 0 12px #00eaff;
 }
 
-/* Effets hover : rotation + zoom + néon fort */
-.socialIcon:hover {
-    transform: scale(1.25) rotate(10deg);
-    box-shadow: 0 0 25px #fff, 0 0 50px #fff;
-}
-
-/* Petite vibration subtile */
-.socialIcon:hover img {
-    animation: vibro 0.15s infinite linear;
-}
-
-@keyframes vibro {
-    0% { transform: translate(0px, 0px) }
-    25% { transform: translate(1px, -1px) }
-    50% { transform: translate(-1px, 1px) }
-    75% { transform: translate(1px, 1px) }
-    100% { transform: translate(0px, 0px) }
-}
-
-/* Image principale */
-.images img {
-    max-width: 500px;
-    height: auto;
-    border-radius: 12px;
-    border: 2px solid #7f00ff;
-    box-shadow: 0 0 20px #7f00ff;
-}
-
-/* Signature */
-.signature {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    font-size: 24px;
-    color: #e0e0e0;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .description { text-align: center; }
-    .images { margin-top: 20px; }
+.pin-country {
+    margin-top: -6px;
+    font-size: 22px;
+    color: #ffae00;
+    text-shadow: 0 0 10px #ffae00;
 }
 </style>
 </head>
+
 <body>
 
-<header>Youra Dallakyan</header>
+<h1>Youra Dallakyan</h1>
 
-<div class="container">
+<!-- ---------------- ICONES RESEAUX ---------------- -->
+<div class="socials">
 
-    <div class="description">
-        Pour me contacter : <br><br>
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@ydlkn59" target="_blank" class="socialIcon">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg">
+    </a>
 
-        <a href="https://www.tiktok.com/@ydlkn59" target="_blank" class="socialIcon tiktok" title="TikTok : ydlkn59">
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg">
-        </a>
+    <!-- Instagram -->
+    <a href="https://instagram.com/yura_dlkn" target="_blank" class="socialIcon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+    </a>
 
-        <a href="https://instagram.com/yura_dlkn" target="_blank" class="socialIcon instagram" title="Instagram : yura_dlkn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-        </a>
+    <!-- Snapchat -->
+    <a href="https://www.snapchat.com/add/yura.arm" target="_blank" class="socialIcon">
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg">
+    </a>
 
-        <a href="https://www.snapchat.com/add/yura.arm" target="_blank" class="socialIcon snapchat" title="Snapchat : yura.arm">
-            <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg">
-        </a>
-
-    </div>
-
-    <div class="images">
-        <img src="https://i.postimg.cc/F1vc7QNZ/Screenshot-20241129-155645-Tik-Tok.jpg" alt="Image principale">
-    </div>
 </div>
 
-<div class="signature">Excusez-le</div>
+<!-- ---------------- ÉPINGLÉ 3D ---------------- -->
+<div class="pin-block">
+    <img class="pin-icon" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Map_marker_icon_%E2%80%93_Nicolas_Mollet_%E2%80%93_Pin_%E2%80%93_Default_%E2%80%93_Default.png">
 
-<!-- Canvas galaxie -->
-<canvas id="bgCanvas"></canvas>
-<script>
-const canvas = document.getElementById('bgCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-const particles = [];
-for(let i=0;i<120;i++){
-    particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,radius:Math.random()*2+1,dx:(Math.random()-0.5)*0.4,dy:(Math.random()-0.5)*0.4});
-}
-function animate(){
-    ctx.fillStyle="#000";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    for(let p of particles){
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
-        ctx.fillStyle="white";
-        ctx.fill();
-        p.x+=p.dx; p.y+=p.dy;
-        if(p.x<0||p.x>canvas.width)p.dx*=-1;
-        if(p.y<0||p.y>canvas.height)p.dy*=-1;
-    }
-    requestAnimationFrame(animate);
-}
-animate();
-window.addEventListener('resize',()=>{canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
-</script>
+    <div class="pin-text">
+        <div class="pin-dept">59</div>
+        <div class="pin-country">Arménie 🇦🇲</div>
+    </div>
+</div>
 
 </body>
 </html>
