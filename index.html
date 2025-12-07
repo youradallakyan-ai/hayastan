@@ -58,7 +58,7 @@ header {
     height: calc(100vh - 100px);
 }
 
-/* Coordonnées avec boutons blancs */
+/* Coordonnées */
 .description {
     max-width: 400px;
     font-size: 28px;
@@ -66,37 +66,55 @@ header {
 }
 
 .description a {
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
+    width: 60px;
+    height: 60px;
     text-decoration: none;
-    color: white;
-    margin-bottom: 15px;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 8px;
+    margin: 10px;
+    border-radius: 12px;
     transition: 0.3s;
-    box-shadow: 0 0 5px #ffffff;
 }
 
-.description a:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ffffff, 0 0 25px #ffffff;
-}
-
+/* Logos */
 .description img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+/* 🔥 Halos personnalisés */
+.tiktok {
+    box-shadow: 0 0 8px #00f0ff, 0 0 15px #ff004f;
+}
+.tiktok:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px #00f0ff, 0 0 25px #ff004f, 0 0 35px #ff004f;
+}
+
+.instagram {
+    box-shadow: 0 0 8px #ff006a, 0 0 15px #ff4f91;
+}
+.instagram:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px #ff006a, 0 0 25px #ff4f91, 0 0 35px #ff006a;
+}
+
+.snapchat {
+    box-shadow: 0 0 8px #ffe600, 0 0 15px #ffff66;
+}
+.snapchat:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px #ffe600, 0 0 25px #ffff66, 0 0 35px #fff200;
 }
 
 /* Image principale */
 .images img {
-    max-width: 500px; /* un peu plus grande */
+    max-width: 500px;
     height: auto;
     border-radius: 12px;
     border: 2px solid #7f00ff;
     box-shadow: 0 0 15px #7f00ff;
-    object-fit: contain;
 }
 
 /* Signature */
@@ -126,14 +144,18 @@ header {
 <div class="container">
     <div class="description">
         Voici mes coordonnées : <br><br>
-        <a href="https://www.tiktok.com/@ydlkn59" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"> TikTok : ydlkn59
+
+        <!-- Icônes avec halos -->
+        <a href="https://www.tiktok.com/@ydlkn59" target="_blank" class="tiktok" title="TikTok : ydlkn59">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg">
         </a>
-        <a href="https://instagram.com/yura_dlkn" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"> Instagram : yura_dlkn
+
+        <a href="https://instagram.com/yura_dlkn" target="_blank" class="instagram" title="Instagram : yura_dlkn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
         </a>
-        <a href="https://www.snapchat.com/add/yura.arm" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg"> Snapchat : yura.arm
+
+        <a href="https://www.snapchat.com/add/yura.arm" target="_blank" class="snapchat" title="Snapchat : yura.arm">
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg">
         </a>
     </div>
 
